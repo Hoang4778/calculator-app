@@ -30,7 +30,7 @@ jobs:
             -H "Content-Type: application/json" \
             -d "{\"client_id\":\"$XRAY_CLIENT_ID\",\"client_secret\":\"$XRAY_CLIENT_SECRET\"}" | tr -d '"')
       
-          curl -v -X POST "https://xray.cloud.getxray.app/api/v2/import/execution/junit?projectKey=STN1&testPlanKey=STN1-7" \
+          curl -v -X POST "https://xray.cloud.getxray.app/api/v2/import/execution/junit?projectKey=STN1" \
             -H "Authorization: Bearer $TOKEN" \
             -H "Content-Type: text/xml" \
             --data @"./target/surefire-reports/TEST-com.example.CalculatorTest.xml"

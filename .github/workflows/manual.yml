@@ -20,7 +20,6 @@ jobs:
 
       - name: Run Maven tests
         run: mvn -B clean test
-        working-directory: ./calculator-app
 
       - name: Show Maven repository contents
         run: ls -R ~/.m2/repository/org/apache/maven/plugins/maven-surefire-plugin || echo "Surefire not found"

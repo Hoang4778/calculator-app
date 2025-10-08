@@ -42,4 +42,3 @@ jobs:
             -H "Content-Type: multipart/form-data" \
             -H "Authorization: Bearer $TOKEN" \
             -F "file=@./target/surefire-reports/TEST-com.example.CalculatorTest.xml"
-          done

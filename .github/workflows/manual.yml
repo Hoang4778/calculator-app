@@ -29,7 +29,7 @@ jobs:
           # Create issue
           ISSUE_KEY=$(curl -s -u "$JIRA_EMAIL:$JIRA_API_TOKEN" \
             -H "Content-Type: application/json" \
-            -d '{"fields":{"project":{"key":"ST2N1"},"summary":"Test result for functionality 1 #${{ github.run_number }}","issuetype":{"name":"Test Execution"}}}' \
+            -d '{"fields":{"project":{"key":"ST2N1"},"summary":"Func 1: Test result #${{ github.run_number }}","issuetype":{"name":"Test Execution"}}}' \
             https://software-testing-nhom-1.atlassian.net/rest/api/3/issue | jq -r '.key')
 
           # Attach report

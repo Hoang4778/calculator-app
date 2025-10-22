@@ -29,11 +29,11 @@ jobs:
           # Create issue
           ISSUE_KEY=$(curl -s -u "$JIRA_EMAIL:$JIRA_API_TOKEN" \
             -H "Content-Type: application/json" \
-            -d '{"fields":{"project":{"key":"MYPROJ"},"summary":"JUnit Results - Build #${{ github.run_number }}","issuetype":{"name":"Task"}}}' \
-            https://your-domain.atlassian.net/rest/api/3/issue | jq -r '.key')
+            -d '{"fields":{"project":{"key":"ST2N1"},"summary":"Test result for functionality 1 #${{ github.run_number }}","issuetype":{"name":"Test Execution"}}}' \
+            https://software-testing-nhom-1.atlassian.net/rest/api/3/issue | jq -r '.key')
 
           # Attach report
           curl -s -u "$JIRA_EMAIL:$JIRA_API_TOKEN" \
             -H "X-Atlassian-Token: no-check" \
             -F "file=@target/surefire-reports/TEST-com.example.CalculatorTest.xml" \
-            "https://your-domain.atlassian.net/rest/api/3/issue/$ISSUE_KEY/attachments"
+            "https://software-testing-nhom-1.net/rest/api/3/issue/$ISSUE_KEY/attachments"

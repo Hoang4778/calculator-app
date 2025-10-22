@@ -36,4 +36,4 @@ jobs:
           curl -s -u "$JIRA_EMAIL:$JIRA_API_TOKEN" \
             -H "X-Atlassian-Token: no-check" \
             -F "file=@target/surefire-reports/TEST-com.example.CalculatorTest.xml" \
-            "https://software-testing-nhom-1.net/rest/api/3/issue/$ISSUE_KEY/attachments"
+            "https://software-testing-nhom-1.atlassian.net/rest/api/3/issue/$ISSUE_KEY/attachments"
